@@ -118,4 +118,26 @@ modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
 });
 
+// search bar to find employee by name  
+const search = document.getElementById('search');
 
+// search bar event listener
+search.addEventListener('keyup', () => {
+    let input = search.value.toLowerCase();
+    let names = [];
+    names = document.querySelectorAll('.name');
+
+    for(let i = 0; i < names.length; i++){
+        let nameText = names[i].innerText;
+
+        // if user input matches an employee name, show those employees
+        if ( nameText.toLowerCase().indexOf(input) > -1 ) {
+            let card = names[i].parentNode.parentNode;
+            card.style.display = '';
+        } else {
+            // if user input does not match an employee name, hide those employees
+            let card = names[i].parentNode.parentNode;
+            card.style.display = 'none';
+        } 
+    }
+});
