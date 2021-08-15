@@ -119,7 +119,7 @@ modalClose.addEventListener('click', () => {
 });
 
 // search bar to find employee by name  
-const search = document.getElementById('search');
+const search = document.getElementById('searchInput');
 
 // search bar event listener
 search.addEventListener('keyup', () => {
